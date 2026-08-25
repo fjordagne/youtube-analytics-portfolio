@@ -71,6 +71,10 @@
 
   <main id="main-content">
     <section class="hero shell" aria-labelledby="hero-title">
+      <div class="hero-graphics" aria-hidden="true">
+        <div class="hero-grid-plane" data-hero-grid></div>
+        <div class="hero-pixel-field" data-pixel-field></div>
+      </div>
       <div class="hero__grid">
         <div class="hero__content">
           <p class="eyebrow">YouTube Analytics &amp; Optimization</p>
@@ -124,24 +128,45 @@
           <p class="section-heading__copy">Production, packaging, optimization and performance analysis across the reporting period.</p>
         </div>
 
-        <ul class="channel-metrics" role="list" aria-label="Verified channel performance metrics">
-          <li>
-            <strong>1.94M+</strong>
-            <span>Views</span>
-          </li>
-          <li>
-            <strong>30.3K</strong>
-            <span>Watch hours</span>
-          </li>
-          <li>
-            <strong>3.24M</strong>
-            <span>Impressions</span>
-          </li>
-          <li>
-            <strong>3.4%</strong>
-            <span>Overall impressions CTR</span>
-          </li>
-        </ul>
+        <div class="channel-metric-stage" data-data-network>
+          <svg class="data-network" viewBox="0 0 1000 60" preserveAspectRatio="none" aria-hidden="true">
+            <g class="data-network__connections">
+              <path data-network-path="0" d="M500 5 C390 6 260 25 125 54"></path>
+              <path data-network-path="1" d="M500 5 C458 13 417 34 375 54"></path>
+              <path data-network-path="2" d="M500 5 C542 13 583 34 625 54"></path>
+              <path data-network-path="3" d="M500 5 C610 6 740 25 875 54"></path>
+            </g>
+            <g class="data-network__pulses">
+              <path data-network-pulse="0" d="M500 5 C390 6 260 25 125 54"></path>
+              <path data-network-pulse="1" d="M500 5 C458 13 417 34 375 54"></path>
+              <path data-network-pulse="2" d="M500 5 C542 13 583 34 625 54"></path>
+              <path data-network-pulse="3" d="M500 5 C610 6 740 25 875 54"></path>
+            </g>
+            <circle class="data-network__source" cx="500" cy="5" r="2.5"></circle>
+            <circle data-network-node="0" cx="125" cy="54" r="2"></circle>
+            <circle data-network-node="1" cx="375" cy="54" r="2"></circle>
+            <circle data-network-node="2" cx="625" cy="54" r="2"></circle>
+            <circle data-network-node="3" cx="875" cy="54" r="2"></circle>
+          </svg>
+          <ul class="channel-metrics" role="list" aria-label="Verified channel performance metrics">
+            <li>
+              <strong>1.94M+</strong>
+              <span>Views</span>
+            </li>
+            <li>
+              <strong>30.3K</strong>
+              <span>Watch hours</span>
+            </li>
+            <li>
+              <strong>3.24M</strong>
+              <span>Impressions</span>
+            </li>
+            <li>
+              <strong>3.4%</strong>
+              <span>Overall impressions CTR</span>
+            </li>
+          </ul>
+        </div>
 
         <div class="channel-evidence" aria-label="Supporting channel screenshots">
           <figure>
@@ -391,33 +416,61 @@
         <p class="section-heading__copy">A compact review that turns channel context into a concrete creative or distribution decision.</p>
       </div>
 
-      <ol class="process-list" role="list">
-        <li>
-          <span>01</span>
-          <h3>Observe</h3>
-          <p>Compare the upload against typical channel performance.</p>
-        </li>
-        <li>
-          <span>02</span>
-          <h3>Diagnose</h3>
-          <p>Identify whether the constraint is reach, packaging, retention or audience fit.</p>
-        </li>
-        <li>
-          <span>03</span>
-          <h3>Test</h3>
-          <p>Change the clearest variable without introducing unnecessary noise.</p>
-        </li>
-        <li>
-          <span>04</span>
-          <h3>Measure</h3>
-          <p>Evaluate the resulting movement in context.</p>
-        </li>
-        <li>
-          <span>05</span>
-          <h3>Recommend</h3>
-          <p>Turn the finding into a concrete creative or distribution decision.</p>
-        </li>
-      </ol>
+      <div class="process-flow" data-process-flow>
+        <svg class="process-connector process-connector--desktop" viewBox="0 0 1000 32" preserveAspectRatio="none" aria-hidden="true">
+          <path class="process-connector__base" pathLength="100" d="M100 16 H900"></path>
+          <path class="process-connector__segment" data-process-segment="0" pathLength="100" d="M100 16 H300"></path>
+          <path class="process-connector__segment" data-process-segment="1" pathLength="100" d="M300 16 H500"></path>
+          <path class="process-connector__segment" data-process-segment="2" pathLength="100" d="M500 16 H700"></path>
+          <path class="process-connector__segment" data-process-segment="3" pathLength="100" d="M700 16 H900"></path>
+          <path class="process-connector__pulse" pathLength="100" d="M100 16 H900"></path>
+          <circle data-process-node="0" cx="100" cy="16" r="3"></circle>
+          <circle data-process-node="1" cx="300" cy="16" r="3"></circle>
+          <circle data-process-node="2" cx="500" cy="16" r="3"></circle>
+          <circle data-process-node="3" cx="700" cy="16" r="3"></circle>
+          <circle data-process-node="4" cx="900" cy="16" r="3"></circle>
+        </svg>
+        <svg class="process-connector process-connector--mobile" viewBox="0 0 32 500" preserveAspectRatio="none" aria-hidden="true">
+          <path class="process-connector__base" pathLength="100" d="M16 50 V450"></path>
+          <path class="process-connector__segment" data-process-segment="0" pathLength="100" d="M16 50 V150"></path>
+          <path class="process-connector__segment" data-process-segment="1" pathLength="100" d="M16 150 V250"></path>
+          <path class="process-connector__segment" data-process-segment="2" pathLength="100" d="M16 250 V350"></path>
+          <path class="process-connector__segment" data-process-segment="3" pathLength="100" d="M16 350 V450"></path>
+          <path class="process-connector__pulse" pathLength="100" d="M16 50 V450"></path>
+          <circle data-process-node="0" cx="16" cy="50" r="3"></circle>
+          <circle data-process-node="1" cx="16" cy="150" r="3"></circle>
+          <circle data-process-node="2" cx="16" cy="250" r="3"></circle>
+          <circle data-process-node="3" cx="16" cy="350" r="3"></circle>
+          <circle data-process-node="4" cx="16" cy="450" r="3"></circle>
+        </svg>
+        <ol class="process-list" role="list">
+          <li>
+            <span>01</span>
+            <h3>Observe</h3>
+            <p>Compare the upload against typical channel performance.</p>
+          </li>
+          <li>
+            <span>02</span>
+            <h3>Diagnose</h3>
+            <p>Identify whether the constraint is reach, packaging, retention or audience fit.</p>
+          </li>
+          <li>
+            <span>03</span>
+            <h3>Test</h3>
+            <p>Change the clearest variable without introducing unnecessary noise.</p>
+          </li>
+          <li>
+            <span>04</span>
+            <h3>Measure</h3>
+            <p>Evaluate the resulting movement in context.</p>
+          </li>
+          <li>
+            <span>05</span>
+            <h3>Recommend</h3>
+            <p>Turn the finding into a concrete creative or distribution decision.</p>
+          </li>
+        </ol>
+      </div>
     </section>
 
     <section class="toolkit-section section shell" id="toolkit" aria-labelledby="toolkit-title">
