@@ -3,15 +3,19 @@
   margin: 14mm 15mm;
 }
 
-:root {
+:root,
+:root[data-theme="dark"],
+:root[data-theme="light"] {
+  color-scheme: light;
   --paper: #ffffff;
   --paper-light: #ffffff;
+  --paper-deep: #f2f2f2;
   --ink: #111111;
   --ink-soft: #242424;
   --muted: #4a4a4a;
   --line: #b8b8b8;
   --line-strong: #777777;
-  --bronze: #5e4938;
+  --bronze: #3f4343;
 }
 
 html,
@@ -25,9 +29,13 @@ body {
 .site-footer,
 .skip-link,
 .cv-hero__actions,
-[data-download-status],
 [data-print-cv] {
   display: none !important;
+}
+
+.has-js [data-reveal] {
+  opacity: 1 !important;
+  transform: none !important;
 }
 
 .shell,
@@ -54,7 +62,7 @@ body {
 }
 
 .cv-hero__title .eyebrow {
-  color: #5e4938;
+  color: #3f4343;
   font-size: 7pt;
 }
 
@@ -75,8 +83,10 @@ body {
 .cv-sidebar {
   grid-column: 1;
   grid-row: 1;
-  padding-right: 6mm;
+  padding: 0 6mm 0 0;
+  border: 0;
   border-right: 0.5pt solid #b8b8b8;
+  background: #ffffff;
 }
 
 .cv-content {

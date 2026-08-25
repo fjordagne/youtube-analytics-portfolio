@@ -4,7 +4,7 @@ A dependency-free, two-page portfolio built for YouTube analytics and optimizati
 
 ## Current publication status
 
-The site is a private beta and remains `noindex, nofollow`. Verified analytics evidence and creative assets are integrated, but the factual and privacy checks below must be completed before publication. Contact links, the real PDF CV, and verified employer/date/education details are still unavailable.
+The site is a private beta and remains `noindex, nofollow`. Verified analytics evidence, creative assets, contact details, and the English PDF CV are integrated, but the factual and privacy checks below must be completed before publication. Verified employer/date/education details remain incomplete in the HTML CV.
 
 ## File structure
 
@@ -16,9 +16,9 @@ The site is a private beta and remains `noindex, nofollow`. Verified analytics e
 |   |-- main.css                  Shared design and responsive styles
 |   `-- print.css                 A4-oriented CV print styles
 |-- scripts/
-|   `-- main.js                   Image dialog, optional PDF, and print handling
+|   `-- main.js                   Theme, navigation, reveal, dialog, and print behavior
 |-- assets/
-|   |-- Fjord_Agne_CV_EN.pdf      Add the real English CV here
+|   |-- Fjord_Agne_CV_EN.pdf      Verified English CV download
 |   |-- analytics/                Public, privacy-cropped Studio evidence
 |   |-- og-cover.svg              Social sharing artwork
 |   `-- work/                     Six canonical creative assets
@@ -32,7 +32,7 @@ The site is a private beta and remains `noindex, nofollow`. Verified analytics e
 
 ## Run locally
 
-The pages can be opened directly, but a local server is recommended because the optional PDF check uses `fetch`.
+The pages can be opened directly, though a local server is recommended to mirror deployed URL behavior.
 
 From this directory, use one of these commands:
 
@@ -46,28 +46,21 @@ python -m http.server 8000
 
 Then open `http://localhost:8000/`. No install or build step is required.
 
-## Edit name and contact details
+## Name and contact details
 
 The name appears in `index.html`, `cv.html`, `favicon.svg`, and `assets/og-cover.svg`.
 
-Contact links are grouped in clearly marked comment blocks near the bottom of `index.html` and in the CV sidebar in `cv.html`. They remain hidden until verified values are supplied.
+Verified email, phone, and LinkedIn details from the English CV are present in the homepage Contact section and the HTML CV sidebar. Keep both locations synchronized with `assets/Fjord_Agne_CV_EN.pdf` when contact details change.
 
-```html
-<!-- Add a verified mailto href and remove hidden before publication. -->
-<a data-contact-link="email" hidden>Email</a>
-```
+## English CV PDF
 
-For each page, add the real `href` and remove `hidden`. Use `mailto:YOUR_VERIFIED_EMAIL` for email. For LinkedIn, use the complete verified `https://` profile URL, add `target="_blank"`, and keep `rel="me noopener noreferrer"`. Writing the real email address as the visible link text also makes the printed CV useful. No JavaScript change is needed.
-
-## Add the English CV PDF
-
-Place the real file at:
+The verified file is stored at:
 
 ```text
 assets/Fjord_Agne_CV_EN.pdf
 ```
 
-The download control on `cv.html` checks that the file exists. It becomes active automatically when the real PDF is present and remains unavailable without creating a broken link when it is absent.
+Homepage and CV-page download controls link directly to this file.
 
 The HTML CV remains readable and printable without the PDF. Use the **Print this page** control to inspect the print layout; the dedicated stylesheet formats it for A4 output.
 
@@ -125,8 +118,6 @@ Only redacted, approved screenshots should ever be committed to `assets/analytic
 
 The public copy is written around supplied responsibilities, methodology, and working areas. These items still require owner verification or real data:
 
-- Add verified email and LinkedIn links to both HTML contact blocks.
-- Add `assets/Fjord_Agne_CV_EN.pdf`.
 - Decide whether verified employer/client names, role titles, and dates can be shown on `cv.html`.
 - Fill and unhide the source templates for Languages and Education only with verified details.
 - Confirm the cybersecurity experience wording accurately reflects the work performed.
@@ -211,13 +202,13 @@ Monitor the deployment in the repository's **Actions** tab. GitHub Pages may tak
 ## Before sending to recruiters
 
 - [ ] Verify every professional claim and working-area statement.
-- [ ] Add the real English CV PDF.
-- [ ] Add verified email and LinkedIn links.
+- [x] Add the real English CV PDF.
+- [x] Add verified email, phone, and LinkedIn links.
 - [ ] Complete the production privacy pass above.
 - [ ] Reconfirm every displayed metric against its mapped source screenshot.
-- [ ] Test the homepage and CV at 375 px and desktop widths.
+- [x] Test the homepage and CV at 375 px and desktop widths.
 - [ ] Test all navigation and contact links with a keyboard.
-- [ ] Test the PDF download link.
+- [x] Test the PDF download link.
 - [ ] Inspect the CV print preview on A4 paper.
 - [ ] Proofread all English copy.
 - [ ] Confirm the canonical and social preview URLs.

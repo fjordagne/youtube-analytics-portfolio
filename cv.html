@@ -7,8 +7,8 @@
   <meta name="description" content="English CV for Fjord Agne, focused on YouTube analytics, content optimization, title and thumbnail packaging, SEO, and video production.">
   <!-- STAGING: Change to "index, follow" only after the factual checklist in README.md is complete. -->
   <meta name="robots" content="noindex, nofollow">
-  <meta name="theme-color" content="#f2efe7">
-  <meta name="color-scheme" content="light">
+  <meta name="theme-color" content="#101111">
+  <meta name="color-scheme" content="dark light">
 
   <meta property="og:type" content="profile">
   <meta property="og:locale" content="en_US">
@@ -22,6 +22,19 @@
   <!-- Example: <link rel="canonical" href="https://USERNAME.github.io/youtube-analytics-portfolio/cv.html"> -->
 
   <link rel="icon" href="favicon.svg" type="image/svg+xml">
+  <script>
+    (() => {
+      const key = "fjord-theme";
+      let saved;
+      try { saved = localStorage.getItem(key); } catch {}
+      const theme = saved === "dark" || saved === "light"
+        ? saved
+        : matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light";
+      document.documentElement.dataset.theme = theme;
+      document.documentElement.classList.add("has-js");
+      document.querySelector('meta[name="theme-color"]').content = theme === "dark" ? "#101111" : "#f5f5f3";
+    })();
+  </script>
   <link rel="stylesheet" href="styles/main.css">
   <link rel="stylesheet" href="styles/print.css" media="print">
   <script src="scripts/main.js" defer></script>
@@ -40,6 +53,10 @@
         <a href="index.html">Portfolio</a>
         <a href="cv.html" aria-current="page">CV</a>
         <a href="#cv-contact">Contact</a>
+        <button class="theme-toggle" type="button" data-theme-toggle aria-label="Switch theme">
+          <span class="theme-toggle__icon" aria-hidden="true"></span>
+          <span data-theme-label>Theme</span>
+        </button>
       </nav>
     </div>
   </header>
@@ -55,11 +72,11 @@
         <h1>YouTube Analytics<br>&amp; Optimization</h1>
       </div>
       <div class="cv-hero__actions">
-        <a class="button button--primary button--download is-unavailable" data-optional-download data-file="assets/Fjord_Agne_CV_EN.pdf" aria-disabled="true">
+        <a class="button button--primary button--download" href="assets/Fjord_Agne_CV_EN.pdf" download>
           <span>Download English CV</span>
           <small>PDF</small>
         </a>
-        <p data-download-status>Web CV below. The PDF control activates when the verified file is added.</p>
+        <p>One-page English PDF. The web CV remains available below.</p>
         <button class="print-link" type="button" data-print-cv>Print this page <span aria-hidden="true">&nearr;</span></button>
       </div>
     </header>
@@ -202,10 +219,10 @@
         <section class="cv-sidebar__section cv-sidebar__section--contact" id="cv-contact">
           <h2>Contact</h2>
           <div class="cv-contact-links">
-            <!-- Add a verified mailto href and remove hidden before publication. -->
-            <a data-contact-link="email" hidden>Email <span aria-hidden="true">&nearr;</span></a>
-            <!-- Add a verified https href and remove hidden before publication. -->
-            <a data-contact-link="linkedin" hidden rel="me noopener noreferrer">LinkedIn <span aria-hidden="true">&nearr;</span></a>
+            <a href="mailto:fjordagne@gmail.com">fjordagne@gmail.com <span aria-hidden="true">&nearr;</span></a>
+            <a href="tel:+5531975162152">+55 31 97516-2152 <span aria-hidden="true">&nearr;</span></a>
+            <a href="https://www.linkedin.com/in/fjord-agne" target="_blank" rel="me noopener noreferrer">LinkedIn <span aria-hidden="true">&nearr;</span></a>
+            <a href="assets/Fjord_Agne_CV_EN.pdf" download>English CV PDF <span aria-hidden="true">&darr;</span></a>
             <a href="index.html">Portfolio <span aria-hidden="true">&nearr;</span></a>
           </div>
         </section>

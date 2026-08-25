@@ -1,13 +1,13 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 630" role="img" aria-labelledby="title desc">
   <title id="title">Fjord Agne, YouTube Analytics and Optimization</title>
-  <desc id="desc">Editorial social sharing cover in warm paper, charcoal, and bronze.</desc>
-  <rect width="1200" height="630" fill="#f2efe7"/>
-  <rect x="56" y="52" width="1088" height="526" fill="none" stroke="#98958c"/>
-  <line x1="56" y1="136" x2="1144" y2="136" stroke="#c9c5ba"/>
-  <text x="82" y="105" fill="#765238" font-family="Arial, sans-serif" font-size="18" font-weight="700" letter-spacing="4">FJORD AGNE</text>
-  <text x="1118" y="105" fill="#6b6b63" font-family="Arial, sans-serif" font-size="14" font-weight="700" letter-spacing="3" text-anchor="end">PORTFOLIO</text>
-  <text x="82" y="290" fill="#1b1c1a" font-family="Arial, sans-serif" font-size="78" font-weight="500" letter-spacing="-4">YouTube performance,</text>
-  <text x="206" y="382" fill="#765238" font-family="Georgia, serif" font-size="84" font-style="italic" letter-spacing="-3">made actionable.</text>
-  <line x1="82" y1="476" x2="1118" y2="476" stroke="#c9c5ba"/>
-  <text x="82" y="524" fill="#6b6b63" font-family="Arial, sans-serif" font-size="15" font-weight="700" letter-spacing="2.5">ANALYTICS  /  CTR  /  RETENTION  /  SEO  /  PACKAGING  /  CONTENT STRATEGY</text>
+  <desc id="desc">Black-and-white editorial social sharing cover.</desc>
+  <rect width="1200" height="630" fill="#f5f5f3"/>
+  <rect x="56" y="52" width="1088" height="526" fill="none" stroke="#979b9a"/>
+  <line x1="56" y1="136" x2="1144" y2="136" stroke="#d3d5d4"/>
+  <text x="82" y="105" fill="#303232" font-family="Arial, sans-serif" font-size="18" font-weight="700" letter-spacing="4">FJORD AGNE</text>
+  <text x="1118" y="105" fill="#646767" font-family="Arial, sans-serif" font-size="14" font-weight="700" letter-spacing="3" text-anchor="end">PORTFOLIO</text>
+  <text x="82" y="290" fill="#111212" font-family="Arial, sans-serif" font-size="78" font-weight="500" letter-spacing="-4">YouTube performance,</text>
+  <text x="206" y="382" fill="#555959" font-family="Georgia, serif" font-size="84" font-style="italic" letter-spacing="-3">made actionable.</text>
+  <line x1="82" y1="476" x2="1118" y2="476" stroke="#d3d5d4"/>
+  <text x="82" y="524" fill="#646767" font-family="Arial, sans-serif" font-size="15" font-weight="700" letter-spacing="2.5">ANALYTICS  /  CTR  /  RETENTION  /  SEO  /  PACKAGING  /  CONTENT STRATEGY</text>
 </svg>

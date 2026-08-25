@@ -7,8 +7,8 @@
   <meta name="description" content="Fjord Agne connects YouTube analytics with title, thumbnail, SEO, retention, and content decisions for long-form and short-form video.">
   <!-- STAGING: Change to "index, follow" only after the factual checklist in README.md is complete. -->
   <meta name="robots" content="noindex, nofollow">
-  <meta name="theme-color" content="#f2efe7">
-  <meta name="color-scheme" content="light">
+  <meta name="theme-color" content="#101111">
+  <meta name="color-scheme" content="dark light">
 
   <meta property="og:type" content="website">
   <meta property="og:locale" content="en_US">
@@ -22,9 +22,21 @@
   <meta name="twitter:image" content="assets/og-cover.svg">
 
   <!-- DEPLOYMENT: Add the final absolute canonical URL here after GitHub Pages is enabled. -->
-  <!-- Example: <link rel="canonical" href="https://USERNAME.github.io/youtube-analytics-portfolio/"> -->
 
   <link rel="icon" href="favicon.svg" type="image/svg+xml">
+  <script>
+    (() => {
+      const key = "fjord-theme";
+      let saved;
+      try { saved = localStorage.getItem(key); } catch {}
+      const theme = saved === "dark" || saved === "light"
+        ? saved
+        : matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light";
+      document.documentElement.dataset.theme = theme;
+      document.documentElement.classList.add("has-js");
+      document.querySelector('meta[name="theme-color"]').content = theme === "dark" ? "#101111" : "#f5f5f3";
+    })();
+  </script>
   <link rel="stylesheet" href="styles/main.css">
   <script src="scripts/main.js" defer></script>
 </head>
@@ -42,17 +54,23 @@
         <a href="index.html" aria-current="page">Portfolio</a>
         <a href="cv.html">CV</a>
         <a href="#contact">Contact</a>
+        <button class="theme-toggle" type="button" data-theme-toggle aria-label="Switch theme">
+          <span class="theme-toggle__icon" aria-hidden="true"></span>
+          <span data-theme-label>Theme</span>
+        </button>
       </nav>
     </div>
+    <nav class="section-nav shell" aria-label="Portfolio sections">
+      <a href="#main-content" data-section-link="main-content">Overview</a>
+      <a href="#selected-work" data-section-link="selected-work">Analytics</a>
+      <a href="#packaging" data-section-link="packaging">Packaging</a>
+      <a href="#creative-work" data-section-link="creative-work">Work</a>
+      <a href="#contact" data-section-link="contact">Contact</a>
+    </nav>
   </header>
 
   <main id="main-content">
     <section class="hero shell" aria-labelledby="hero-title">
-      <div class="section-marker" aria-hidden="true">
-        <span>01</span>
-        <span>Position</span>
-      </div>
-
       <div class="hero__grid">
         <div class="hero__content">
           <p class="eyebrow">YouTube Analytics &amp; Optimization</p>
@@ -64,10 +82,8 @@
 
           <div class="hero__actions">
             <a class="button button--primary" href="#selected-work">View verified evidence</a>
-            <a class="text-link" href="cv.html">View CV <span aria-hidden="true">&nearr;</span></a>
+            <a class="text-link" href="assets/Fjord_Agne_CV_EN.pdf" download>Download CV <span aria-hidden="true">&darr;</span></a>
           </div>
-
-          <p class="hero__scope">Analytics <span aria-hidden="true">&middot;</span> CTR <span aria-hidden="true">&middot;</span> Retention <span aria-hidden="true">&middot;</span> SEO <span aria-hidden="true">&middot;</span> Packaging <span aria-hidden="true">&middot;</span> Content Strategy</p>
         </div>
 
         <aside class="diagnostic-note" aria-labelledby="diagnostic-note-title">
@@ -78,61 +94,52 @@
           <dl>
             <div>
               <dt>Signal</dt>
-              <dd>High impressions<br>Low CTR</dd>
+              <dd>High impressions / low CTR</dd>
             </div>
             <div>
               <dt>Read</dt>
-              <dd>Distribution is creating opportunities. Packaging may not be converting them.</dd>
+              <dd>Reach exists. Packaging may not be converting it.</dd>
             </div>
             <div>
               <dt>Next action</dt>
-              <dd>Review title-thumbnail hierarchy, audience fit, and traffic-source context before testing one clear variable.</dd>
+              <dd>Review hierarchy and audience fit before testing one clear variable.</dd>
             </div>
           </dl>
         </aside>
       </div>
 
-      <div class="hero__footer" aria-hidden="true">
-        <span>Data</span>
-        <span>Creative</span>
-        <span>Distribution</span>
-      </div>
     </section>
 
     <section class="analytics-section channel-performance section" id="performance" aria-labelledby="performance-title">
       <div class="shell">
         <div class="section-heading section-heading--inverse">
           <div class="section-marker" aria-hidden="true">
-            <span>02</span>
+            <span>01</span>
             <span>Performance</span>
           </div>
           <div>
             <p class="eyebrow">Verified channel totals</p>
             <h2 id="performance-title">Channel performance during my tenure.</h2>
           </div>
-          <p class="section-heading__copy">Worked across YouTube content production, packaging, optimization and performance analysis during this reporting period.</p>
+          <p class="section-heading__copy">Production, packaging, optimization and performance analysis across the reporting period.</p>
         </div>
 
         <ul class="channel-metrics" role="list" aria-label="Verified channel performance metrics">
           <li>
             <strong>1.94M+</strong>
             <span>Views</span>
-            <small>Channel aggregate</small>
           </li>
           <li>
             <strong>30.3K</strong>
             <span>Watch hours</span>
-            <small>Channel aggregate</small>
           </li>
           <li>
             <strong>3.24M</strong>
             <span>Impressions</span>
-            <small>Channel aggregate</small>
           </li>
           <li>
             <strong>3.4%</strong>
             <span>Overall impressions CTR</span>
-            <small>Channel aggregate</small>
           </li>
         </ul>
 
@@ -158,7 +165,7 @@
     <section class="work-section section shell" id="selected-work" aria-labelledby="work-title">
       <div class="section-heading">
         <div class="section-marker" aria-hidden="true">
-          <span>03</span>
+          <span>02</span>
           <span>Evidence</span>
         </div>
         <div>
@@ -171,23 +178,18 @@
       <article class="case-study" aria-labelledby="case-01-title">
         <header class="case-study__header">
           <p>Case 01 <span>/</span> Long-form</p>
-          <h3 id="case-01-title">Long-form packaging and viewer conversion</h3>
+          <h3 id="case-01-title">Long-form performance</h3>
         </header>
 
         <div class="case-study__grid">
-          <div class="case-study__narrative">
-            <section aria-labelledby="case-01-challenge">
-              <h4 id="case-01-challenge">Performance signal</h4>
-              <p>Selected long-form uploads reached 21K to 23K+ views, with individual examples showing different packaging and viewer-response signals.</p>
-            </section>
-            <section aria-labelledby="case-01-analysis">
-              <h4 id="case-01-analysis">What I evaluate</h4>
-              <p>I compare impressions, CTR, watch time, subscriber response and typical channel performance rather than judging an upload from views alone.</p>
-            </section>
-            <section aria-labelledby="case-01-recommendation">
-              <h4 id="case-01-recommendation">Optimization decision</h4>
-              <p>The goal is to determine whether the next intervention belongs in packaging, content structure, topic selection or distribution.</p>
-            </section>
+          <div class="case-study__summary">
+            <dl class="case-metrics" aria-label="Selected long-form performance metrics">
+              <div><dt>21K&ndash;23K+</dt><dd>Selected upload views</dd></div>
+              <div><dt>4.5%</dt><dd>CTR <small>Upload A</small></dd></div>
+              <div><dt>251</dt><dd>Watch hours <small>Upload B</small></dd></div>
+              <div><dt>+240</dt><dd>Subscribers <small>Upload B</small></dd></div>
+            </dl>
+            <p>I compare impressions, CTR, viewing depth and subscriber response to identify whether the next decision belongs in packaging, structure, topic selection or distribution.</p>
           </div>
 
           <div class="case-study__evidence evidence-stack">
@@ -206,38 +208,23 @@
           </div>
         </div>
 
-        <div class="case-study__footer">
-          <p>Signals reviewed</p>
-          <ul class="term-list" role="list">
-            <li>Impressions</li>
-            <li>CTR</li>
-            <li>Watch hours</li>
-            <li>Subscriber response</li>
-            <li>Typical performance</li>
-          </ul>
-        </div>
       </article>
 
       <article class="case-study" aria-labelledby="case-02-title">
         <header class="case-study__header">
           <p>Case 02 <span>/</span> Short-form</p>
-          <h3 id="case-02-title">Breakout Short Performance</h3>
+          <h3 id="case-02-title">Breakout Short performance</h3>
         </header>
 
         <div class="case-study__grid">
-          <div class="case-study__narrative">
-            <section aria-labelledby="case-02-challenge">
-              <h4 id="case-02-challenge">Reach</h4>
-              <p>The Short reached 621K+ views and added +906 subscribers.</p>
-            </section>
-            <section aria-labelledby="case-02-analysis">
-              <h4 id="case-02-analysis">Viewing depth</h4>
-              <p>It generated 5.9K watch hours with a 1:11 average view duration, approximately 27 seconds above typical performance in the supplied comparison. Together, these provide a stronger quality signal than views alone.</p>
-            </section>
-            <section aria-labelledby="case-02-recommendation">
-              <h4 id="case-02-recommendation">Interpretation</h4>
-              <p>I use reach, viewing depth, subscriber response and comparison with typical performance together when deciding whether a topic or format deserves further iteration.</p>
-            </section>
+          <div class="case-study__summary">
+            <dl class="case-metrics" aria-label="Breakout Short performance metrics">
+              <div><dt>621K+</dt><dd>Views</dd></div>
+              <div><dt>+906</dt><dd>Subscribers</dd></div>
+              <div><dt>5.9K</dt><dd>Watch hours</dd></div>
+              <div><dt>1:11</dt><dd>Average view duration</dd></div>
+            </dl>
+            <p>I compare reach, viewing depth, subscriber response and typical performance before deciding whether a topic or format deserves another iteration.</p>
           </div>
 
           <div class="case-study__evidence evidence-stack">
@@ -256,67 +243,29 @@
           </div>
         </div>
 
-        <div class="case-study__footer">
-          <p>Signals reviewed</p>
-          <ul class="term-list" role="list">
-            <li>One Short</li>
-            <li>Views</li>
-            <li>Subscribers gained</li>
-            <li>Watch hours</li>
-            <li>Average view duration</li>
-            <li>Typical performance</li>
-          </ul>
-        </div>
       </article>
 
-      <article class="case-study" aria-labelledby="case-03-title">
-        <header class="case-study__header">
-          <p>Case 03 <span>/</span> Cross-format</p>
-          <h3 id="case-03-title">Production and distribution across formats</h3>
-        </header>
-
-        <div class="case-study__grid">
-          <div class="case-study__narrative">
-            <section aria-labelledby="case-03-challenge">
-              <h4 id="case-03-challenge">Formats</h4>
-              <p>The supplied Studio inventory supports work across long-form videos, Shorts, and live content rather than a single publishing format.</p>
-            </section>
-            <section aria-labelledby="case-03-analysis">
-              <h4 id="case-03-analysis">Different reads</h4>
-              <p>Long-form emphasizes the title-thumbnail promise and viewing depth. Shorts place more weight on the opening and continued viewing. Live content also has to account for stream structure and replay value.</p>
-            </section>
-            <section aria-labelledby="case-03-recommendation">
-              <h4 id="case-03-recommendation">Workflow</h4>
-              <p>Use one channel strategy while adapting packaging, production, metadata, and performance review to the behavior each format creates.</p>
-            </section>
+      <article class="format-proof" aria-labelledby="format-proof-title">
+        <header>
+          <div>
+            <p class="eyebrow">Across formats</p>
+            <h3 id="format-proof-title">One strategy, adapted to each format.</h3>
           </div>
-
-          <div class="case-study__evidence evidence-stack format-evidence">
-            <figure class="evidence-card">
+          <p>Long-form, Shorts and live content create different viewing behaviors. Packaging and performance review adapt to each.</p>
+        </header>
+        <div class="format-proof__evidence">
+            <figure>
               <a class="media-link" href="assets/analytics/content-formats.png" target="_blank" rel="noopener" data-enlarge data-enlarge-caption="Studio content row showing a published Short and its view count.">
                 <img src="assets/analytics/content-formats.png" width="766" height="165" alt="YouTube Studio row showing Short-form publishing" loading="lazy" decoding="async">
               </a>
-              <figcaption><span>Short-form</span> Published Short represented in the content inventory.</figcaption>
+              <figcaption>Short-form</figcaption>
             </figure>
-            <figure class="evidence-card">
+            <figure>
               <a class="media-link" href="assets/analytics/content-live.png" target="_blank" rel="noopener" data-enlarge data-enlarge-caption="Studio Live inventory showing public streams, dates, and views.">
                 <img src="assets/analytics/content-live.png" width="848" height="650" alt="YouTube Studio Live inventory" loading="lazy" decoding="async">
               </a>
-              <figcaption><span>Live</span> Live publishing across multiple public streams.</figcaption>
+              <figcaption>Live</figcaption>
             </figure>
-          </div>
-        </div>
-
-        <div class="case-study__footer">
-          <p>Working range</p>
-          <ul class="term-list" role="list">
-            <li>Long-form</li>
-            <li>Shorts</li>
-            <li>Live</li>
-            <li>Packaging</li>
-            <li>Metadata</li>
-            <li>Distribution</li>
-          </ul>
         </div>
       </article>
     </section>
@@ -324,42 +273,37 @@
     <section class="positioning section shell" id="packaging" aria-labelledby="packaging-title">
       <div class="section-heading">
         <div class="section-marker" aria-hidden="true">
-          <span>04</span>
+          <span>03</span>
           <span>Packaging</span>
         </div>
         <div>
-          <p class="eyebrow">Packaging principles</p>
-          <h2 id="packaging-title">CTR begins with a clear promise, not visual noise.</h2>
+          <h2 id="packaging-title">Packaging is part of the analysis.</h2>
         </div>
-        <p class="section-heading__copy">CTR is a response to a package in context, not a thumbnail score. I review the title and image together against traffic source, topic demand, and mobile legibility.</p>
+        <p class="section-heading__copy">CTR can reveal a creative problem in focal point, hierarchy, density or the title-thumbnail relationship.</p>
       </div>
 
       <ol class="practice-model packaging-principles" role="list" aria-label="Thumbnail and title packaging principles">
         <li>
           <div class="practice-model__topline">
-            <span>01</span>
             <h3>Focal point</h3>
           </div>
           <p>Give the eye one immediate subject or idea before adding supporting detail.</p>
         </li>
         <li>
           <div class="practice-model__topline">
-            <span>02</span>
-            <h3>Hierarchy</h3>
+            <h3>Visual hierarchy</h3>
           </div>
           <p>Control scale, contrast, and placement so the intended reading order survives at mobile size.</p>
         </li>
         <li>
           <div class="practice-model__topline">
-            <span>03</span>
-            <h3>Density</h3>
+            <h3>Information density</h3>
           </div>
           <p>Remove information that competes with the central promise instead of treating every detail as equally important.</p>
         </li>
         <li>
           <div class="practice-model__topline">
-            <span>04</span>
-            <h3>Relationship</h3>
+            <h3>Title + thumbnail</h3>
           </div>
           <p>Let the title and thumbnail add different parts of the same honest promise rather than repeating one another.</p>
         </li>
@@ -369,14 +313,14 @@
     <section class="creative-work section shell" id="creative-work" aria-labelledby="creative-work-title">
       <div class="section-heading section-heading--compact">
         <div class="section-marker" aria-hidden="true">
-          <span>05</span>
+          <span>04</span>
           <span>Creative work</span>
         </div>
         <div>
           <p class="eyebrow">Supporting execution</p>
           <h2 id="creative-work-title">Selected packaging work.</h2>
         </div>
-        <p class="section-heading__copy">Creative execution supports the analytical work through clear hierarchy, controlled information density, and an honest click promise.</p>
+        <p class="section-heading__copy">Selected packaging built around clear hierarchy, controlled density and an honest click promise.</p>
       </div>
 
       <section class="creative-group" aria-labelledby="long-form-work-title">
@@ -437,100 +381,82 @@
     <section class="process-section section shell" id="process" aria-labelledby="process-title">
       <div class="section-heading">
         <div class="section-marker" aria-hidden="true">
-          <span>06</span>
+          <span>05</span>
           <span>Process</span>
         </div>
         <div>
           <p class="eyebrow">How I work</p>
-          <h2 id="process-title">A five-step review built for editorial decisions.</h2>
+          <h2 id="process-title">Observe. Diagnose. Test. Measure. Recommend.</h2>
         </div>
-        <p class="section-heading__copy">The goal is not a long report. It is a well-supported recommendation that can be understood before publishing and evaluated afterward.</p>
+        <p class="section-heading__copy">A compact review that turns channel context into a concrete creative or distribution decision.</p>
       </div>
 
       <ol class="process-list" role="list">
         <li>
           <span>01</span>
           <h3>Observe</h3>
-          <p>Review performance and establish channel, format, and traffic context.</p>
+          <p>Compare the upload against typical channel performance.</p>
         </li>
         <li>
           <span>02</span>
           <h3>Diagnose</h3>
-          <p>Determine whether friction sits in packaging, content, distribution, or audience fit.</p>
+          <p>Identify whether the constraint is reach, packaging, retention or audience fit.</p>
         </li>
         <li>
           <span>03</span>
           <h3>Test</h3>
-          <p>Define the smallest meaningful variable that can answer the question.</p>
+          <p>Change the clearest variable without introducing unnecessary noise.</p>
         </li>
         <li>
           <span>04</span>
           <h3>Measure</h3>
-          <p>Compare the response in context rather than relying on an isolated metric.</p>
+          <p>Evaluate the resulting movement in context.</p>
         </li>
         <li>
           <span>05</span>
           <h3>Recommend</h3>
-          <p>Translate the finding into a direct next action for the editor or channel owner.</p>
+          <p>Turn the finding into a concrete creative or distribution decision.</p>
         </li>
       </ol>
     </section>
 
     <section class="toolkit-section section shell" id="toolkit" aria-labelledby="toolkit-title">
-      <div class="section-heading">
-        <div class="section-marker" aria-hidden="true">
-          <span>07</span>
-          <span>Toolkit</span>
-        </div>
+      <div class="toolkit-compact">
         <div>
           <p class="eyebrow">Working areas</p>
           <h2 id="toolkit-title">Analysis and execution in the same workflow.</h2>
         </div>
-        <p class="section-heading__copy">The toolkit reflects hands-on work across the full content cycle, from Studio review to editing and short-form distribution.</p>
+        <ul class="toolkit-strip" role="list">
+          <li>YouTube Studio</li>
+          <li>YouTube Analytics</li>
+          <li>SEO</li>
+          <li>Content Strategy</li>
+          <li>Thumbnail Design</li>
+          <li>Video Editing</li>
+          <li>Shorts</li>
+          <li>Reels</li>
+          <li>TikTok</li>
+        </ul>
       </div>
-
-      <dl class="toolkit-list">
-        <div>
-          <dt>Analysis</dt>
-          <dd>YouTube Studio <span>&middot;</span> YouTube Analytics <span>&middot;</span> Performance summaries</dd>
-        </div>
-        <div>
-          <dt>Packaging</dt>
-          <dd>Thumbnail design <span>&middot;</span> Title optimization <span>&middot;</span> Visual hierarchy</dd>
-        </div>
-        <div>
-          <dt>Discoverability</dt>
-          <dd>SEO <span>&middot;</span> Metadata</dd>
-        </div>
-        <div>
-          <dt>Production</dt>
-          <dd>Video editing <span>&middot;</span> Long-form video <span>&middot;</span> YouTube Shorts</dd>
-        </div>
-        <div>
-          <dt>Distribution</dt>
-          <dd>Short-form strategy <span>&middot;</span> Reels <span>&middot;</span> TikTok</dd>
-        </div>
-      </dl>
     </section>
 
     <section class="contact-section" id="contact" aria-labelledby="contact-title">
       <div class="contact-section__inner shell">
         <div class="section-marker section-marker--inverse" aria-hidden="true">
-          <span>08</span>
+          <span>06</span>
           <span>Contact</span>
         </div>
         <div class="contact-section__main">
-          <p class="eyebrow">Start a conversation</p>
-          <h2 id="contact-title">Interested in improving what happens after Publish?</h2>
-          <p>I can support recurring analytics review, packaging decisions, and concise recommendations for the editor or channel owner.</p>
+          <h2 id="contact-title">Let's make performance easier to act on.</h2>
+          <p class="contact-section__identity"><strong>Fjord Agne</strong><span>YouTube Analytics &amp; Optimization</span></p>
+          <p>Available for analytics review, packaging decisions and content optimization work.</p>
         </div>
-        <nav class="contact-section__links" aria-label="Contact links">
-          <!-- Add a verified mailto href and remove hidden before publication. -->
-          <a data-contact-link="email" hidden>Email <span aria-hidden="true">&nearr;</span></a>
-          <!-- Add a verified https href and remove hidden before publication. -->
-          <a data-contact-link="linkedin" hidden rel="me noopener noreferrer">LinkedIn <span aria-hidden="true">&nearr;</span></a>
-          <a href="cv.html">View CV <span aria-hidden="true">&nearr;</span></a>
-        </nav>
+        <address class="contact-section__links" aria-label="Contact details">
+          <a href="mailto:fjordagne@gmail.com"><span>fjordagne@gmail.com</span><span aria-hidden="true">&nearr;</span></a>
+          <a href="tel:+5531975162152"><span>+55 31 97516-2152</span><span aria-hidden="true">&nearr;</span></a>
+          <a href="https://www.linkedin.com/in/fjord-agne" target="_blank" rel="me noopener noreferrer"><span>LinkedIn</span><span aria-hidden="true">&nearr;</span></a>
+          <a href="assets/Fjord_Agne_CV_EN.pdf" download><span>Download English CV</span><span aria-hidden="true">&darr;</span></a>
+        </address>
       </div>
     </section>
   </main>
